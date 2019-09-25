@@ -38,7 +38,7 @@
                 'white-style': !detectMode}"
             >
             <td>{{ user.id }}</td>
-            <td>{{ user.username }}</td>
+            <td>{{ formatName(user.username) }}</td>
             <td>{{ formatDate(user.last_login) }}</td>
             <td>{{ user.login_count }}</td>
             <td>{{ user.project_count }}</td>
@@ -68,7 +68,7 @@
                 'white-style': !detectMode}"
             >
             <td>{{ user.id }}</td>
-            <td>{{ user.username }}</td>
+            <td>{{ formatName(user.username) }}</td>
             <td>{{ formatDate(user.last_login) }}</td>
             <td>{{ user.login_count }}</td>
             <td>{{ user.project_count }}</td>
@@ -76,7 +76,7 @@
           </tbody>
           </table>
         </div>
-        
+
   </div>
 </template>
 <script>
@@ -107,6 +107,13 @@ export default {
       else{
         this.detectMode = true
       }
+    },
+    formatName: function(name){
+ 
+       return name.split(' ').map(function(value){ 
+          return value.charAt(0).toUpperCase() + value.substr(1).toLowerCase();
+        }).join(' ');
+ 
     },
     formatDate: function(date){
        return moment(date).format('MMMM Do YYYY, h:mm:ss a')

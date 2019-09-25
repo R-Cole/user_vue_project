@@ -9,7 +9,10 @@ On page 2, there is a button that, when clicked all user rows with a login count
 
 When the button is clicked again on either page the default non-highlighted view displays.
 
-
+## Tech
+Vue.JS
+Moment.JS
+ 
 ## Project setup
 ```
 npm install
